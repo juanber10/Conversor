@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Controllador.Controlador;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -23,10 +24,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //   ####### Se define la imagen que sera utlizada luego con el Jlabel #######     
    
     ImageIcon imagen = new ImageIcon("src/imagenes/Intercambiodemonedas.png");
-    Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(iconoMonedas.getWidth(),iconoMonedas.getHeight(),Image.SCALE_DEFAULT));
-    iconoMonedas.setIcon(icono);
+    Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(monedasLbl.getWidth(),monedasLbl.getHeight(),Image.SCALE_DEFAULT));
+    monedasLbl.setIcon(icono);
+    this.repaint(); 
+    
+    ImageIcon imagen2 = new ImageIcon("src/imagenes/Velocidades.png");
+    Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(velocidadesLbl.getWidth(),velocidadesLbl.getHeight(),Image.SCALE_DEFAULT));
+    velocidadesLbl.setIcon(icono2);
     this.repaint(); 
         
+    ImageIcon imagen3 = new ImageIcon("src/imagenes/ZonaHoraria.png");
+    Icon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(zonahorariaLbl.getWidth(),zonahorariaLbl.getHeight(),Image.SCALE_DEFAULT));
+    zonahorariaLbl.setIcon(icono3);
+    this.repaint(); 
         
     }
 
@@ -42,7 +52,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        iconoMonedas = new javax.swing.JLabel();
+        monedasLbl = new javax.swing.JLabel();
+        velocidadesLbl = new javax.swing.JLabel();
+        zonahorariaLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,34 +63,57 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("Por favor seleccione una opcion para continuar");
 
+        monedasLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                monedasLblMouseClicked(evt);
+            }
+        });
+
+        velocidadesLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                velocidadesLblMouseClicked(evt);
+            }
+        });
+
+        zonahorariaLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                zonahorariaLblMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(97, 97, 97))
+                .addGap(153, 153, 153))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(iconoMonedas, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(247, 247, 247)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(monedasLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(velocidadesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addComponent(zonahorariaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(48, 48, 48)
-                .addComponent(iconoMonedas, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(monedasLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(velocidadesLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(zonahorariaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,19 +122,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void monedasLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monedasLblMouseClicked
+        Controlador.ocultar();
+        Controlador.verConvMonedas();
+    }//GEN-LAST:event_monedasLblMouseClicked
+
+    private void velocidadesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_velocidadesLblMouseClicked
+        Controlador.ocultar();
+        Controlador.verConvVelocidad();
+    }//GEN-LAST:event_velocidadesLblMouseClicked
+
+    private void zonahorariaLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zonahorariaLblMouseClicked
+        Controlador.ocultar();
+        Controlador.verConvZonaHoraria();
+    }//GEN-LAST:event_zonahorariaLblMouseClicked
 
     /**
      * @param args the command line arguments
@@ -107,9 +157,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel iconoMonedas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel monedasLbl;
+    private javax.swing.JLabel velocidadesLbl;
+    private javax.swing.JLabel zonahorariaLbl;
     // End of variables declaration//GEN-END:variables
 }
