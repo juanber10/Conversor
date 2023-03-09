@@ -1,5 +1,5 @@
 
-package conversor;
+package Modelo;
 
 
 public class Moneda {

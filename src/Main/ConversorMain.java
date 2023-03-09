@@ -1,10 +1,12 @@
-package conversor;
+package Main;
+
+import Controllador.Controlador;
 
 /**
  *
  * @author Gomez Juan
  */
-public class Conversor {
+public class ConversorMain {
 
 //Requisitos:
 //- El convertidor de moneda debe:
@@ -25,7 +27,12 @@ public class Conversor {
 
     public static void main(String[] args) {
         
+        System.out.println("Se inicia el programa");
         
+        Controlador.presentar();    
+          
+        System.out.println("finaliza el programa");
     }
+    
     
 }
