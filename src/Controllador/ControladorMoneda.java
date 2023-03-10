@@ -109,25 +109,12 @@ public class ControladorMoneda {
                 cotizacionActual = 0.15;
                 CalculoMoneda(cantidad, cotizacionActual, "Won sul-coreano",
                         "Pesos Argentinos");
-
                 break; 
                 
             default:
                JOptionPane.showMessageDialog(null, "ERROR!debe ingresar un tipo de conversion" );
         }
         
-//         ...
-//-De Peso ARS a Dólar
-//-De Peso ARS a Euros
-//-De Peso ARS a Libras Esterlinas
-//-De Peso ARS a Yen Japonés
-//-De Peso ARS a Won sul-coreano
-//-De Dólar a Peso ARS
-//-De Euros a Peso ARS
-//-De Libras Esterlinas a Peso ARS
-//-De Yen Japonés a Peso ARS
-//-De Won sul-coreano a Peso ARS
-
     }
 
 }

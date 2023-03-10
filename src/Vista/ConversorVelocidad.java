@@ -5,6 +5,8 @@
 package Vista;
 
 import Controllador.Controlador;
+import Controllador.ControladorVelocidad;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,9 +33,18 @@ public class ConversorVelocidad extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btnConvertir = new javax.swing.JButton();
+        cbxVelocidades = new javax.swing.JComboBox<>();
+        txtVelocidad = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(821, 405));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel1.setText("Conversor de Velocidades");
 
         btnMenu.setText("Menu");
@@ -43,27 +54,70 @@ public class ConversorVelocidad extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Ingrese el valor de la velocidad");
+
+        btnConvertir.setText("Convertir");
+        btnConvertir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConvertirMouseClicked(evt);
+            }
+        });
+
+        cbxVelocidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "- De Kilometro/hora a Milla/hora.", "- De Kilometro/hora a Pie/segundo", "- De Kilometro/hora a Metro/segundo", "- De Kilometro/hora a Nudo" }));
+
+        jLabel3.setText("Seleccione la unidad de velocidad que desea convertir");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(244, 244, 244)
+                .addGap(284, 284, 284)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(272, 272, 272)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(btnMenu)))
-                .addContainerGap(270, Short.MAX_VALUE))
+                        .addGap(24, 24, 24)
+                        .addComponent(cbxVelocidades, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(290, 290, 290))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(265, 265, 265))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
+                                .addGap(304, 304, 304))))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(334, 334, 334)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtVelocidad)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(326, 326, 326))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
-                .addComponent(btnMenu)
-                .addGap(55, 55, 55))
+                .addGap(43, 43, 43)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(txtVelocidad)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(cbxVelocidades)
+                .addGap(39, 39, 39)
+                .addComponent(btnConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
+                .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(58, 58, 58))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -84,6 +138,7 @@ public class ConversorVelocidad extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenuMouseClicked
@@ -91,14 +146,33 @@ public class ConversorVelocidad extends javax.swing.JFrame {
        Controlador.presentar();
     }//GEN-LAST:event_btnMenuMouseClicked
 
+    private void btnConvertirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConvertirMouseClicked
+        
+             
+        if (!"".equals(txtVelocidad.getText())) {
+            double velocidad = Double.parseDouble(txtVelocidad.getText());
+            String seleccion = (String) cbxVelocidades.getSelectedItem();
+
+            ControladorVelocidad.Conversion(velocidad, seleccion);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR!debe ingresar un valor en Velocidad");
+        }
+    }//GEN-LAST:event_btnConvertirMouseClicked
+
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConvertir;
     private javax.swing.JButton btnMenu;
+    private javax.swing.JComboBox<String> cbxVelocidades;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtVelocidad;
     // End of variables declaration//GEN-END:variables
 }
