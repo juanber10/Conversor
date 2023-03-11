@@ -33,9 +33,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     velocidadesLbl.setIcon(icono2);
     this.repaint(); 
         
-    ImageIcon imagen3 = new ImageIcon("src/imagenes/ZonaHoraria.png");
-    Icon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(zonahorariaLbl.getWidth(),zonahorariaLbl.getHeight(),Image.SCALE_DEFAULT));
-    zonahorariaLbl.setIcon(icono3);
+    ImageIcon imagen3 = new ImageIcon("src/imagenes/pesos.png");
+    Icon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(lblPesos.getWidth(),lblPesos.getHeight(),Image.SCALE_DEFAULT));
+    lblPesos.setIcon(icono3);
     this.repaint(); 
         
     }
@@ -54,7 +54,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         monedasLbl = new javax.swing.JLabel();
         velocidadesLbl = new javax.swing.JLabel();
-        zonahorariaLbl = new javax.swing.JLabel();
+        lblPesos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -76,9 +76,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        zonahorariaLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPesos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                zonahorariaLblMouseClicked(evt);
+                lblPesosMouseClicked(evt);
             }
         });
 
@@ -92,7 +92,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(velocidadesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
-                .addComponent(zonahorariaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,10 +113,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(monedasLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(velocidadesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(zonahorariaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(133, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(monedasLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(velocidadesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,10 +151,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Controlador.verConvVelocidad();
     }//GEN-LAST:event_velocidadesLblMouseClicked
 
-    private void zonahorariaLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zonahorariaLblMouseClicked
+    private void lblPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPesosMouseClicked
         Controlador.ocultar();
         Controlador.verConvZonaHoraria();
-    }//GEN-LAST:event_zonahorariaLblMouseClicked
+    }//GEN-LAST:event_lblPesosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -164,8 +165,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblPesos;
     private javax.swing.JLabel monedasLbl;
     private javax.swing.JLabel velocidadesLbl;
-    private javax.swing.JLabel zonahorariaLbl;
     // End of variables declaration//GEN-END:variables
 }

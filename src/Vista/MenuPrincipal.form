@@ -53,7 +53,7 @@
                   <EmptySpace pref="104" max="32767" attributes="0"/>
                   <Component id="velocidadesLbl" min="-2" pref="182" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                  <Component id="zonahorariaLbl" min="-2" pref="182" max="-2" attributes="0"/>
+                  <Component id="lblPesos" min="-2" pref="182" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -80,11 +80,13 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="monedasLbl" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
-                      <Component id="velocidadesLbl" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
-                      <Component id="zonahorariaLbl" min="-2" pref="169" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="monedasLbl" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
+                          <Component id="velocidadesLbl" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="lblPesos" min="-2" pref="191" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="133" max="32767" attributes="0"/>
+                  <EmptySpace pref="111" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,9 +115,9 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="velocidadesLblMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="zonahorariaLbl">
+        <Component class="javax.swing.JLabel" name="lblPesos">
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="zonahorariaLblMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPesosMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

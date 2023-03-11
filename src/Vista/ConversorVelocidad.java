@@ -6,6 +6,7 @@ package Vista;
 
 import Controllador.Controlador;
 import Controllador.ControladorVelocidad;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -64,6 +65,12 @@ public class ConversorVelocidad extends javax.swing.JFrame {
         });
 
         cbxVelocidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "- De Kilometro/hora a Milla/hora.", "- De Kilometro/hora a Pie/segundo", "- De Kilometro/hora a Metro/segundo", "- De Kilometro/hora a Nudo" }));
+
+        txtVelocidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVelocidadKeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Seleccione la unidad de velocidad que desea convertir");
 
@@ -160,6 +167,25 @@ public class ConversorVelocidad extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnConvertirMouseClicked
 
+    private void txtVelocidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVelocidadKeyTyped
+                                           
+        // se captura el caracter presionado con el evento y se lo almacena en la variable caracter
+        char caracter = evt.getKeyChar();
+        // Se comprueba que el caracter no sea una letra, espacio en blanco y que solo pueda contener un solo punto
+        if (((caracter < '0') || (caracter > '9'))
+                && (caracter != KeyEvent.VK_BACK_SPACE)
+                && (caracter != '.' || txtVelocidad.getText().contains("."))) {
+            evt.consume();
+
+            JOptionPane.showMessageDialog(null, "ERROR! Solo se aceptan valores numericos positivos");
+        }
+    }//GEN-LAST:event_txtVelocidadKeyTyped
+
+ 
+
+             
+    
+    
     /**
      * @param args the command line arguments
      */

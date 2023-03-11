@@ -29,12 +29,7 @@ public class ControladorVelocidad {
    
 
     }
-    
-//- De Kilometro/hora a Milla/hora.
-//- De Kilometro/hora a Pie/segundo
-//- De Kilometro/hora a Metro/segundo
-//- De Kilometro/hora a Nudo
-        
+            
         
     public static void Conversion(double velocidad, String opcion) {
         

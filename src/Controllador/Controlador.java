@@ -6,15 +6,18 @@ package Controllador;
 
 import Vista.ConversorMoneda;
 import Vista.ConversorVelocidad;
-import Vista.ConversorZonaHoraria;
+import Vista.ConversorPesos;
 import Vista.MenuPrincipal;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import javax.swing.JOptionPane;
 
 public class Controlador {
 
     static MenuPrincipal view = new MenuPrincipal();
     static ConversorMoneda conversorMoneda = new ConversorMoneda();
     static ConversorVelocidad conversorVelocidad = new ConversorVelocidad();
-    static ConversorZonaHoraria conversorZona = new ConversorZonaHoraria();
+    static ConversorPesos conversorZona = new ConversorPesos();
     static public void presentar() {
         view.setVisible(true);
     }
@@ -53,6 +56,19 @@ public class Controlador {
 
         ocultar();
         System.exit(0);
+    }
+    
+    public static void CalculoUnidadMedida(double valorIngresado, double relacion, String unidadOrigen,
+            String unidadDestino) {
+
+        double resultado;
+        resultado = valorIngresado * relacion;
+        BigDecimal resultadoredondeado = new BigDecimal(resultado);
+        resultadoredondeado = resultadoredondeado.setScale(2, RoundingMode.DOWN);
+        JOptionPane.showMessageDialog(null,
+                " " + valorIngresado + " " + unidadOrigen + " son : " + resultadoredondeado + " " + unidadDestino,
+                "Resultado", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
 }
