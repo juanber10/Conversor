@@ -4,7 +4,6 @@
  */
 package Controllador;
 
-import static Controllador.ControladorVelocidad.CalculoVelocidad;
 import javax.swing.JOptionPane;
 
 /**

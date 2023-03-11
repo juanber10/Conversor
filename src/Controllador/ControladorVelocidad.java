@@ -4,8 +4,7 @@
  */
 package Controllador;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -14,21 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class ControladorVelocidad {
     
-    
-        public static void CalculoVelocidad(double velocidad, double relacion, String velocidadOrigen,
-            String velocidadDestino) {
 
-
-        double resultado;
-            resultado = velocidad * relacion;
-            BigDecimal resultadoredondeado = new BigDecimal(resultado);
-            resultadoredondeado = resultadoredondeado.setScale(2, RoundingMode.DOWN);
-            JOptionPane.showMessageDialog(null,
-                    " " + velocidad + " " + velocidadOrigen + " son : " + resultadoredondeado + " " + velocidadDestino,
-                    "Resultado", JOptionPane.INFORMATION_MESSAGE);
-   
-
-    }
             
         
     public static void Conversion(double velocidad, String opcion) {
@@ -39,7 +24,7 @@ public class ControladorVelocidad {
             case "- De Kilometro/hora a Milla/hora.":
                 
                 relacion = 0.621371 ;
-                CalculoVelocidad(velocidad,relacion,
+                Controlador.CalculoUnidadMedida(velocidad,relacion,
                         "Km/h", "M/h");
                 
                 break;
@@ -47,7 +32,7 @@ public class ControladorVelocidad {
             case "- De Kilometro/hora a Pie/segundo":
                 
                 relacion = 0.911344 ;
-                CalculoVelocidad(velocidad,relacion,
+                Controlador.CalculoUnidadMedida(velocidad,relacion,
                         "Km/h", "Pie/s");
                 
                 break;
@@ -55,14 +40,14 @@ public class ControladorVelocidad {
             case "- De Kilometro/hora a Metro/segundo":
                 
                 relacion = 0.277778 ;
-                CalculoVelocidad(velocidad,relacion,
+                Controlador.CalculoUnidadMedida(velocidad,relacion,
                         "Km/h", "Mts/s");
                 
                 break; 
             case "- De Kilometro/hora a Nudo":
                 
                 relacion = 0.539957 ;
-                CalculoVelocidad(velocidad,relacion,
+                Controlador.CalculoUnidadMedida(velocidad,relacion,
                         "Km/h", "Nudos");
                 
                 break;   
